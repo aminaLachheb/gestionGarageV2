@@ -1,0 +1,147 @@
+<div class="account-pages my-5 pt-sm-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card overflow-hidden">
+          <div class="bg-soft bg-primary">
+            <div class="row">
+              <div class="col-7">
+                <div class="text-primary p-4">
+                  <h2 class="text-primary bold">Inscription</h2>
+                  <p>Obtenez votre compte maintenant.</p>
+                </div>
+              </div>
+              <!-- <div class="col-5 align-self-end">
+                <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+              </div> -->
+            </div>
+          </div>
+          <div class="card-body pt-0">
+            <div>
+              <a href="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                  <span class="avatar-title rounded-circle bg-light">
+                    <img src="assets/images/logoVoiture.jpg" alt="" class="rounded-circle" height="34">
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="p-2">
+
+              <form class="needs-validation" name="signupForm" [formGroup]="signupForm" (ngSubmit)="onSubmit()"
+                novalidate>
+
+                <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Inscription réussie.
+                </ngb-alert>
+
+                <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+
+                <div class="mb-3">
+                  <label for="prenom" class="form-label">Prénom</label>
+
+                  <input type="text" formControlName="prenom" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.prenom.touched && f.prenom.errors || submitted && f.prenom.errors }"
+                     id="prenom" [(ngModel)]="user.prenom"
+                    placeholder="Entrez votre prénom" />
+
+                  <div *ngIf="f.prenom.errors" class="invalid-feedback">
+                    <div *ngIf="f.prenom.errors.required">Le prénom est onligatoire</div>
+                  </div>
+                </div>
+
+                
+                <div class="mb-3">
+                  <label for="nom" class="form-label">Nom</label>
+
+                  <input type="text" formControlName="nom" class="form-control"
+                    [ngClass]="{ 'is-invalid':  f.nom.touched && f.nom.errors || submitted && f.nom.errors}" 
+                    id="nom" [(ngModel)]="user.nom"
+                    placeholder="Entrez votre nom" />
+
+                  <div *ngIf=" f.nom.errors" class="invalid-feedback">
+                    <div *ngIf="f.nom.errors.required">Le nom est onligatoire</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="tel" class="form-label">Numéro de téléphone</label>
+
+                  <input type="text" formControlName="tel" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.tel.touched && f.tel.errors || submitted && f.tel.errors}" 
+                    id="tel" [(ngModel)]="user.tel"
+                    placeholder="Entrez votre numéro de téléphone" />
+
+                  <div *ngIf="f.tel.errors" class="invalid-feedback">
+                    <div *ngIf="f.tel.errors.required">Le numéro de téléphone est onligatoire</div>
+                    <div *ngIf="f.tel.errors.minlength">Numéro de téléphone doit être composé au moins de 8 caractères</div>
+                  </div>
+                </div>
+
+                <div class="mb-3" >
+                  <label for="email" class="form-label">Email</label>
+
+                  <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors || submitted && f.email.errors  }" 
+                    id="email" [(ngModel)]="user.email"
+                    placeholder="Entrez votre mail" />
+                  <div *ngIf=" f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.email">l'email doit être valide.</div>
+                    <div *ngIf="f.email.errors.required">L'email est obligatoire</div>
+                    <div *ngIf="f.email.errors['emailTaken']">Email existant</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+
+                  <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid':f.password.touched && f.password.errors || submitted && f.password.errors }"
+                     id="password" [(ngModel)]="user.password"
+                     placeholder="Entrez votre mot de passe" minlength="8"/>
+
+                  <div *ngIf=" f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.minlength">Numéro de téléphone doit être composé au moins de 8 caractères</div>
+                    <div *ngIf="f.password.errors.required ">Mot de passe obligatoire</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="confirm" class="form-label">Confirmez votre mot de passe</label>
+
+                  <input type="password" formControlName="confirm" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.confirm.touched && f.confirm.errors || submitted && f.confirm.errors}" 
+                    id="confirm" [(ngModel)]="user.confirm"
+                    placeholder="Entrez votre mot de passe" />
+
+                  <div *ngIf=" f.confirm.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirm.errors.required">La confirmation obligatoire</div>
+                    <div *ngIf="f.confirm.errors.matching">
+                      La confirmation et le mot de passe ne correspondent pas!
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 d-grid">
+                  <button class="btn btn-primary" type="submit">S'inscrire</button>
+                </div>
+              
+                <div class="mt-4 text-center">
+                  <p class="mb-0">En vous inscrivant, vous acceptez <a href="javascript: void(0);"
+                      class="text-primary">Conditions d'utilisation</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end card -->
+
+        <div class="mt-5 text-center">
+          <p>Avez-vous un compte ? <a routerLink="/account/login" class="fw-medium text-primary"> Se Connecter</a>
+          </p>
+          <p>© {{year}} Voitures. Conçu avec <i class="mdi mdi-heart text-danger"></i></p>
+        </div>
+      </div> <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+</div>

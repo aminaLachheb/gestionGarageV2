@@ -1,0 +1,84 @@
+<app-vertical></app-vertical>
+
+<div class="main-content">
+  <div class="page-content">
+    <div class="row">
+      <div class="col-12">
+          <div class="page-title-box d-flex align-items-center justify-content-between">
+              <h2 class="mb-0 font-size-18">Gestion d'utilisateurs</h2>
+              <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item active">Bienvenue à notre espace gestion d'utilisateurs
+                      </li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="card">
+        <div class="col-12">
+          <div class=" d-flex justify-content-end">
+          <form class="app-search d-none d-lg-block">
+            <div class="position-relative">
+              <input type="text" name ="recherche" class="form-control" placeholder="Recherche"
+              (keyup)="applyFilter($event)" >
+              <span class="bx bx-search-alt"></span>
+            </div>
+          </form>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div>
+            <label for="input">Pages: </label>
+            <select id="select" class="pull-right" [(ngModel)]="pageSize" >
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            </div>
+              <div>
+                <!--routerLink="/ajouter"-->
+                <button class="btn btn-primary btn-sm" (click)="Ajouter()" >Ajouter
+                  <span class="bx bx-plus"></span>
+                </button>
+              </div>
+            </div>
+            
+            <div class=" d-flex align-items-center justify-content-between">
+                <table class="table table-striped" matSort>
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col" (click)="sort('prenom')"><i class="fa fa-sort"></i>  Prénom &nbsp;</th>
+                        <th scope="col"(click)="sort('nom')"><i class="fa fa-sort"></i>  Nom&nbsp;</th>
+                        <th scope="col"(click)="sort('email')"><i class="fa fa-sort"></i>  Email &nbsp;</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Rôle</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let user of dataSource.filteredData  | orderBy: key: reverse | paginate: {
+                         itemsPerPage: pageSize,
+                         currentPage: page,
+                        totalItems: totalLength}">
+                        <td scope="col">{{user.prenom}}</td>
+                        <td scope="col">{{user.nom}}</td>
+                        <td scope="col">{{user.email}}</td>
+                        <td scope="col">{{user.tel}}</td>
+                        <td scope="col">{{user.role}}</td>
+                        <td scope="col">
+                          <div class="d-flex justify-content-between">
+                          <button class="bx bxs-eyedropper btn btn-success" (click)="modifier(user.email)"></button>
+                          <button class="bx bx-trash-alt btn btn-danger" (click)="supprimer(user.id)"></button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <pagination-controls class="d-flex justify-content-end" (pageChange)="page = $event"
+            previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
+        </div>
+    </div>
+    
+    </div>
+ 
+</div>

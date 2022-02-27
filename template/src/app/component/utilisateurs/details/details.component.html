@@ -1,0 +1,88 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <a>
+          <button class="bx bx-exit btn btn-danger" (click)="fermer()"></button>
+        </a>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-soft bg-primary">
+              <div class="row">
+                <div class="col-7">
+                  <div class="text-primary p-4">
+                    <h2 class="text-primary bold">Détails d'un utilisateur</h2>
+                  </div>
+                </div>
+                <!-- <div class="col-5 align-self-end">
+                  <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div>
+                <a href="/">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <ngx-avatar  class="my-avatar" name="{{completeName}}" 
+                      bgColor="#58D3F7" fgColor="#000000" size="70" 
+                      textSizeRatio="2.2" >
+                      </ngx-avatar>
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="p-2">
+  
+                <form name="infoForm" [formGroup]="infoForm" >
+    
+                  <div class="d-flex justify-content-between">
+                    <label  class="form-label">Prénom: </label>
+                    <label class="form-label">{{user.prenom}}</label>
+
+                   
+                  </div>
+  
+                  
+                  <div class="d-flex justify-content-between">
+                    <label for="nom" class="form-label">Nom: </label>
+                    <label class="form-label">{{user.nom}}</label>
+
+                    
+                  </div>
+  
+                  <div class="d-flex justify-content-between">
+                    <label for="tel" class="form-label">Numéro de téléphone: </label>
+                    <label class="form-label">{{user.tel}}</label>
+
+                    
+                  </div>
+  
+                  <div class="d-flex justify-content-between">
+                    <label for="email" class="form-label">Email</label>
+                    <label class="form-label">{{user.email}}</label>
+
+                    
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <label for="role" class="form-label" >Rôle</label>
+                    <label class="form-label">{{user.role}}</label>
+
+                    
+                </div>
+                
+                  <div class="d-flex justify-content-center ">
+                    <button class="btn btn-danger" (click)= "fermer()">Fermer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>

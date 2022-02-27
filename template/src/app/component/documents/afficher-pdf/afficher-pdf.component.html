@@ -1,0 +1,37 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="text-primary p-4 d-flex justify-content-between ">
+                  <h2 class="text-primary bold">Voir Facture</h2>
+                  <div class="d-flex justify-content-end">
+                    <a>
+                      <button class="bx bx-download btn btn-success" (click)="download(pdfname)"></button>
+                    </a>
+                    <a>
+                      <button class="bx bx-exit btn btn-danger" (click)="fermer()"></button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+<!--<pdf-viewer [src]="pdfsrc"
+            [render-text]="true"
+            [original-size]="false"
+   [show-all]="true"
+   [fit-to-page]='true'
+
+            style="display: block;
+            height: 800px;">
+</pdf-viewer>-->
+
+
+<ngx-extended-pdf-viewer
+  [src]="pdfsrc"
+  useBrowserLocale="true"
+  showUnverifiedSignatures="true"
+  height="80vh">
+</ngx-extended-pdf-viewer>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,112 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <a>
+          <button class="bx bx-exit btn btn-danger" (click)="fermer()"></button>
+        </a>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-soft bg-primary">
+              <div class="row">
+                <div class="col-7">
+                  <div class="text-primary p-4">
+                    <h2 class="text-primary bold">Détails d'un utilisateur</h2>
+                  </div>
+                </div>
+                <!-- <div class="col-5 align-self-end">
+                  <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div>
+                <a href="/">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <ngx-avatar  class="my-avatar" name="{{completeName}}" 
+                      bgColor="#58D3F7" fgColor="#000000" size="70" 
+                      textSizeRatio="2.2" >
+                      </ngx-avatar>                 
+                       </span>
+                  </div>
+                </a>
+              </div>
+              <div class="p-2">
+                <h5 class="text-danger">NB: Modification de téléphone et rôle seulement!</h5>
+
+                <form name="infoForm" [formGroup]="infoForm" >
+    
+                  <div class="mb-3">
+                    <label for="prenom" class="form-label">Prénom</label>
+  
+                    <input type="text" formControlName="prenom" [(ngModel)]="user.prenom" class="form-control"
+                       id="prenom" readonly="readonly" />
+                  </div>
+  
+                  
+                  <div class="mb-3">
+                    <label for="nom" class="form-label">Nom</label>
+  
+                    <input type="text" formControlName="nom" [(ngModel)]="user.nom" class="form-control"
+                      id="nom" readonly="readonly"/>
+                  </div>
+  
+                  <div class="mb-3">
+                    <label for="tel" class="form-label">Numéro de téléphone</label>
+
+                    <!--<input type="text" formControlName="tel" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.tel.touched && f.tel.errors || submitted && f.tel.errors}" 
+                    id="tel" [(ngModel)]="user.tel"
+                    placeholder="Entrez votre numéro de téléphone" />-->
+
+
+  
+                    <input type="text" [(ngModel)]="user.tel" formControlName="tel" class="form-control"
+                    [ngClass]="{ 'is-invalid': f.tel.touched && f.tel.errors || submitted && f.tel.errors}" 
+                    id="tel" [(ngModel)]="user.tel"  />
+                 
+                  <div *ngIf=" f.tel.errors" class="invalid-feedback">
+                    <div *ngIf="f.tel.errors.minlength">Numéro de téléphone doit être composé au moins de 8 caractères</div>
+                    <div *ngIf="f.tel.errors.required">Le numéro de téléphone est obligatoire</div>
+                  </div>
+                </div>
+  
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+  
+                    <input type="email" formControlName="email" [(ngModel)]="user.email" class="form-control"
+                      id="email" readonly="readonly"/>
+                  </div>
+                  <!--<div class="mb-3">
+                    <label for="role" class="form-label" >Rôle</label>
+                    <input type="text" [(ngModel)]="user.role" formControlName="role" class="form-control"
+                    id="role"/>
+                </div>-->
+                <div class="mb-3">
+                <label for="role" class="form-label" >Rôle</label>
+                  <mat-form-field id="role" class="form-control">
+                      <!-- <mat-label> Rôle </mat-label> -->
+                      <mat-select [(value)]=user.role>
+                      <mat-option value="admin">Admin</mat-option>
+                      <mat-option value="personnel">Personnel</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                    
+                  <div class="d-flex justify-content-center ">
+                    <button class="btn btn-success" (click)="modifier()">Modifier</button>
+                    <button class="btn btn-danger" (click)= "fermer()">Fermer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>

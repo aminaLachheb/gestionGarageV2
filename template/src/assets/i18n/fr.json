@@ -1,0 +1,268 @@
+{
+    "HEADER": {
+      "ACTIVITIES":"Activités récentes",
+      "SIGNEDINVOICES":"Factures signées",
+      "UNSIGNEDINVOICES":"Factues non signées",
+      "PERCENT":"Pourcentage",
+      "INVOICES":"Factures",
+      "ALLPROJECT":"Tout les projets",
+      "PROJECTCHOICE":"Choisir un projet",
+      "STATE":"Etat",
+      "PROJECT":"Projet",
+      "FIRST":"Intervenant1",
+      "SECOND":"Intervenant2",
+      "USERMANAGEMENT":"Gestion des utilisateurs",
+      "DOCMANAGEMENT":"Gestion des documents",
+      "DASHBOARD":"Tableau de bord",
+      "WELCOME":"Bienvenue à notre ",
+      "SIZE":"Taille",
+      "NUMBER":"Numéro",
+      "NEXT":"Suivant",
+      "PREVIOUS":"Précédent",
+      "ROLE":"Rôle",
+      "ADD":"Ajouter",
+      "PHONENUMBER":"Téléphone",
+      "LASTNAME":"Prénom",
+      "FIRSTNAME":"Nom",
+      "USERS": "Utilisateurs",
+      "SEARCH": "Recherche...",
+      "MEGA_MENU": "Mega Menu",
+      "NOTIFICATIONS": {
+        "TITLE": "Notifications",
+        "VIEW_ALL": "Afficher Tout",
+        "LOAD_MORE": "Afficher Plus..",
+        "FIRST": {
+          "TITLE": "Votre commande passée",
+          "TEXT": "Si plusieurs langues fusionnent la grammaire.",
+          "TIME": "Il y'a 3 minutes"
+        },
+        "SECOND": {
+          "TITLE": "James Lemire",
+          "TEXT": "Cela ressemblera à de l’anglais simplifié.",
+          "TIME": "Il y'a 1 heure"
+        },
+        "THIRD": {
+          "TITLE": "Votre article est expédié",
+          "TEXT": "Si plusieurs langues fusionnent la grammaire.",
+          "TIME": "Il y'a 3 minutes"
+        },
+        "FOUR": {
+          "TITLE": "Salena Layfield",
+          "TEXT": "En tant qu’ami sceptique de Cambridge.",
+          "TIME": " Il y'a 1 heure"
+        }
+      },
+      "SETTINGS": "Configurations",
+      "UI": {
+        "TITLE": "UI Composant",
+        "LIGHTBOX": "LightBox",
+        "RANGE_SLIDER": "Range Slider",
+        "SWEET_ALERT": "Sweet Alert",
+        "RATING": "Rating",
+        "FORMS": "Forms",
+        "TABLES": "Tables",
+        "CHARTS": "Charts"
+      },
+     
+      "EXTRA_PAGES": {
+        "TITLE": "Extra Pages",
+        "LIGHT_SIDEBAR": "Light Sidebar",
+        "COMPACT_SIDEBAR": "Compact Sidebar",
+        "HORIZONTAL_LAYOUT": "Horizontal layout",
+        "MAINTENANCE": "Maintenance",
+        "COMING SOON": "Coming Soon",
+        "TIMELINE": "Timeline",
+        "FAQ": "FAQs"
+      },
+      "LOGIN": {
+        "PROFILE": "Profile",
+        "SETTINGS": "Configs",
+        "LOGOUT": "Se déconnecter"
+      }
+    },
+    "MENUITEMS": {
+      "MENU": {
+        "TEXT": "Menu"
+      },
+      "DASHBOARD": {
+        "TEXT": "Tableau de bord",
+        "BADGE": "04",
+        "LIST": {
+          "DEFAULT": "Par defaut",
+          "SAAS": "Saas",
+          "CRYPTO": "Crypto",
+          "BLOG": "Blog"
+        }
+      },
+      "LAYOUTS": {
+        "TEXT": "Layouts",
+        "LIST": {
+          "HORIZONTAL": "Horizontal",
+          "LIGHTSIDEBAR": "Light Sidebar",
+          "COMPACTSIDEBAR": "Compact Sidebar",
+          "ICONSIDEBAR": "Icons Sidebar",
+          "BOXED": "Boxed Layout",
+          "COLOREDSIDEBAR": "Colored Sidebar",
+          "VERTICAL": "Vertical",
+          "LIGHTTOPBAR": "Light Topbar",
+          "COLOREDHEADER": "Colored Header",
+          "SCROLLABLE": "Scrollable"
+        }
+      },
+      "APPS": {
+        "TEXT": "Apps"
+      },
+      "CALENDAR": {
+        "TEXT": "Calendrier"
+      },
+      
+      "FILEMANAGER": {
+        "TEXT": "File Manager",
+        "BADGE": "New"
+      },
+      
+      
+      "EMAIL": {
+        "TEXT": "Email",
+        "LIST": {
+          "INBOX": "Inbox",
+          "READEMAIL": "Read Email",
+          "TEMPLATE": {
+            "BADGE": "New",
+            "TEXT": "Template",
+            "LIST": {
+              "BASIC": "Basic Action",
+              "ALERT": "Alert Email",
+              "BILLING": "Billing Email"
+            }
+          }
+        }
+      },
+      "INVOICES": {
+        "TEXT": "Factures",
+        "LIST": {
+          "INVOICELIST": "Liste des factures",
+          "INVOICEDETAIL": "Détails de facture"
+        }
+      },
+     
+      "PAGES": {
+        "TEXT": "Pages"
+      },
+      "AUTHENTICATION": {
+        "TEXT": "Authentication",
+        "BADGE": "New",
+        "LIST": {
+          "LOGIN": "Login",
+         
+          "REGISTER": "Register",
+          "RECOVERPWD": "Recover Password",
+          "LOCKSCREEN": "Lock screen",
+          "LOCKSCREEN2": "Lock screen 2",
+          "CONFIRMMAIL": "Confirm Mail",
+          "CONFIRMMAIL2": "Confirm Mail 2",
+          "EMAILVERIFICATION": "Email verification",
+          "EMAILVERIFICATION2": "Email verification 2",
+          "TWOSTEPVERIFICATION": "Two step verification",
+          "TWOSTEPVERIFICATION2": "Two step verification 2"
+        }
+      },
+      "UTILITY": {
+        "TEXT": "Utility",
+        "LIST": {
+          "STARTER": "Starter Page",
+          "MAINTENANCE": "Maintenance",
+          "TIMELINE": "Timeline",
+          "FAQS": "FAQs",
+          "PRICING": "Pricing",
+          "ERROR404": "Error 404",
+          "ERROR500": "Error 500"
+        }
+      },
+      "COMPONENTS": {
+        "TEXT": "Components"
+      },
+      "UIELEMENTS": {
+        "TEXT": "UI Elements",
+        "LIST": {
+          "ALERTS": "Alerts",
+          "BUTTONS": "Buttons",
+          "CARDS": "Cards",
+          "CAROUSEL": "Carousel",
+          "DROPDOWNS": "Dropdowns",
+          "GRID": "Grid",
+          "IMAGES": "Images",
+          "MODALS": "Modals",
+          "RANGESLIDER": "Range Slider",
+          "PROGRESSBAR": "Progress Bars",
+          "SWEETALERT": "Sweet Alert",
+          "TABS": "Tabs & Accordions",
+          "TYPOGRAPHY": "Typography",
+          "VIDEO": "Video",
+          "GENERAL": "General",
+          "COLORS": "Colors",
+          "CROPPER": "Image Cropper"
+        }
+      },
+      "FORMS": {
+        "TEXT": "Forms",
+        "BADGE": "09",
+        "LIST": {
+          "ELEMENTS": "Form Elements",
+          "VALIDATION": "Form Validation",
+          "ADVANCED": "Form Advanced",
+          "EDITOR": "Form Editor",
+          "FILEUPLOAD": "Form File Upload",
+          "REPEATER": "Form Repeater",
+          "WIZARD": "Form Wizard",
+          "MASK": "Form Mask",
+          "LAYOUTS": "Form Layouts"
+        }
+      },
+      "TABLES": {
+        "TEXT": "Tables",
+        "LIST": {
+          "BASIC": "Basic Tables",
+          "ADVANCED": "Advanced Table"
+        }
+      },
+      "CHARTS": {
+        "TEXT": "Charts",
+        "LIST": {
+          "APEX": "Apex Chart",
+          "CHARTJS": "Chartjs Chart",
+          "CHARTIST": "Chartist Chart",
+          "ECHART": "E Chart"
+        }
+      },
+      "ICONS": {
+        "TEXT": "Icons",
+        "LIST": {
+          "BOXICONS": "Boxicons",
+          "MATERIALDESIGN": "Material Design",
+          "DRIPICONS": "Dripicons",
+          "FONTAWESOME": "Font awesome"
+        }
+      },
+      "MAPS": {
+        "TEXT": "Maps",
+        "LIST": {
+          "GOOGLEMAP": "Google Maps"
+        }
+      },
+      "MULTILEVEL": {
+        "TEXT": "Multi Level",
+        "LIST": {
+          "LEVEL1": {
+            "1": "Level 1.1",
+            "2": "Level 1.2",
+            "LEVEL2": {
+              "1": "Level 2.1",
+              "2": "Level 2.2"
+            }
+          }
+        }
+      }
+    }
+  }
+  

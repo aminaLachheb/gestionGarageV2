@@ -1,0 +1,132 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <a>
+          <button class="bx bx-exit btn btn-danger" (click)="fermer()"></button>
+        </a>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-soft bg-primary">
+              <div class="row">
+                <div class="col-7">
+                  <div class="text-primary p-4">
+                    <h2 class="text-primary bold">Modification du profile</h2>
+                  </div>
+                </div>
+                <!-- <div class="col-5 align-self-end">
+                  <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div>
+                <a href="/">
+                  <div class="avatar-md profile-user-wid mb-4">
+                    <span class="avatar-title rounded-circle bg-light">
+                      <img src="assets/images/logoVoiture.jpg" alt="" class="rounded-circle" height="34">
+                    </span>
+                  </div>
+                </a>
+              </div>
+              <div class="p-2">
+                    <h5 class="text-danger">NB: Modification de l'adresse, site, téléphone et fax seuleument!</h5>
+                <form class="needs-validation" name="ProfileForm" [formGroup]="ProfileForm">
+
+                    <label class="form-label"><strong>Adresse:</strong></label>
+                    
+                    <div class="mb-3"> 
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" formControlName="description" class="form-control"
+                    placeholder="Entrez description" [(ngModel)]="societe.address.description"/>
+                    </div>
+                  
+                    <div class="mb-3">
+                    <label for="rue" class="form-label">Rue</label>
+                    <input type="text" formControlName="rue" class="form-control"
+                    [ngClass]="{ 'is-invalid':  f.rue.touched && f.rue.errors || submitted && f.rue.errors}" 
+                    placeholder="Entrez rue" [(ngModel)]="societe.address.street"/>
+                    <div *ngIf="f.rue.errors" class="invalid-feedback">
+                    <div *ngIf="f.rue.errors.required">La rue est onligatoire</div>
+                    </div>
+                  
+                    </div>
+                  
+                    <div class="mb-3">
+                    <label for="city" class="form-label">Cité</label>
+                    <input type="text" formControlName="city"  class="form-control" 
+                    [ngClass]="{ 'is-invalid':f.city.touched && f.city.errors || submitted && f.city.errors}"
+                    placeholder="Entrez cité" [(ngModel)]="societe.address.cityName"/>
+                    <div *ngIf="f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">La cité est onligatoire</div>
+                    </div>
+                    </div>
+                  
+                    <div class="mb-3">
+                    <label for="code" class="form-label">Code postal</label>
+                    <input type="text" formControlName="code"  class="form-control"
+                    [ngClass]="{ 'is-invalid': f.code.touched && f.code.errors || submitted && f.code.errors}"
+                     placeholder="Entrez code postal" [(ngModel)]="societe.address.cityCode"/>
+                    <div *ngIf="f.code.errors" class="invalid-feedback">
+                    <div *ngIf=" f.code.errors.required">Le code postal est onligatoire</div>
+                    </div>
+                    </div>
+                  
+                    <div class="mb-3">
+                    <label for="pays" class="form-label">Pays</label>
+                    <input type="text" formControlName="pays"  class="form-control"
+                    [ngClass]="{ 'is-invalid': f.pays.touched && f.pays.errors || submitted && f.pays.errors}" 
+                    placeholder="Entrez pays" [(ngModel)]="societe.address.country"/>
+                    <div *ngIf="f.pays.errors" class="invalid-feedback">
+                    <div *ngIf="f.pays.errors.required">Le pays est onligatoire</div>
+                    </div>
+                    </div>
+                  
+                    <div class="mb-3">
+                      <label for="site" class="form-label"><strong>Site web</strong></label>
+                      <input type="text" formControlName="site"  class="form-control" 
+                      [ngClass]="{ 'is-invalid': f.site.touched && f.site.errors || submitted && f.site.errors}" 
+                      placeholder="Entrez le site web" [(ngModel)]="societe.site"/>
+                      <div *ngIf="f.site.errors" class="invalid-feedback">
+                        <div *ngIf="f.site.errors.required">Le site web est onligatoire</div>
+                      </div>
+                      </div>
+                  
+                    <div class="mb-3">
+                      <label for="tel" class="form-label"><strong>Numéro de téléphone</strong></label>
+                      <input type="text" formControlName="tel"  class="form-control" 
+                      [ngClass]="{ 'is-invalid': f.tel.touched && f.tel.errors || submitted && f.tel.errors}" 
+                      placeholder="Entrez le numéro de téléphone" [(ngModel)]="societe.tel" />
+                      <div *ngIf="f.tel.errors" class="invalid-feedback">
+                        <div *ngIf="f.tel.errors.required">Le numéro de téléphone est onligatoire</div>
+                      </div>
+                      </div>
+                  
+                      <div class="mb-3">
+                        <label for="fax" class="form-label"><strong>Numéro de Fax</strong></label>
+                        <input type="text" formControlName="fax"  class="form-control" 
+                        [ngClass]="{ 'is-invalid':f.fax.touched && f.fax.errors || submitted && f.fax.errors}" 
+                        placeholder="Entrez le fax" [(ngModel)]="societe.fax"/>
+                        <div *ngIf="f.fax.errors" class="invalid-feedback">
+                          <div *ngIf="f.fax.errors.required">Le fax est onligatoire</div>
+                        </div>
+                        </div>
+                  
+                  <div class="d-flex justify-content-end ">
+                    <button class="btn btn-danger" 
+                    type="button"(click)="fermer()">Fermer</button>
+                    <button class="btn btn-success" 
+                    type="submit"(click)="modifier(societe.id)">Modifier</button>
+                  </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>

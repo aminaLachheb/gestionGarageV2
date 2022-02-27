@@ -1,0 +1,94 @@
+<app-vertical></app-vertical>
+
+  
+<div class="main-content">
+  <div class="page-content">
+  <div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h2 class="mb-0 font-size-18">Gestion de factures</h2>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item active">Bienvenue à notre espace de gestion des factures
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+  </div>
+    <div class="card">
+     
+        <div class="col-12">
+          <div class=" d-flex justify-content-end">
+          <form class="app-search d-none d-lg-block">
+            <div class="position-relative">
+              <input type="text" name ="recherche" class="form-control" placeholder="Recherche"
+              (keyup)="applyFilter($event)" >
+              <span class="bx bx-search-alt"></span>
+            </div>
+          </form>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div>
+            <label for="input">Pages: </label>
+            <select id="select" class="pull-right" [(ngModel)]="pageSize" >
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+            </div>
+              
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-between">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                      <tr>
+                        <th class="col"><input type="checkbox"/></th>
+                        <th class="col" (click)="sort('number')" > <i class="fa fa-sort"></i>  Numéro &nbsp;</th>
+                        <th class="col" (click)="sort('nom')" > <i class="fa fa-sort"></i>  Nom &nbsp;</th>
+                        <th class="col"(click)="sort('etat')"><i class="fa fa-sort"></i>  Etat &nbsp;</th>
+                        <th scope="col"(click)="sort('projet')"><i class="fa fa-sort"></i>  Projet &nbsp;</th>
+                        <th scope="col" (click)="sort('size')"> <i class="fa fa-sort"></i>Taille &nbsp;</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let document of dataSource.filteredData  | orderBy: key: reverse | paginate: {
+                         itemsPerPage: pageSize,
+                         currentPage: page,
+                        totalItems: totalLength}">
+                        <td scope="col"> <input type="checkbox"/></td>
+                        <td scope="col">{{document.id}}</td>
+                        <td scope="col">{{document.name}}</td>
+                        <td scope="col" >{{document.etat}}</td>
+                        <td scope="col" >{{document.module}}</td>
+                        <td scope="col" >{{document.size}} kB</td>
+                        <td scope="col">
+                          <div class="d-flex justify-content-between" >
+                            <button class="bx bx-show-alt btn btn-link" 
+                            (click)="onFileSelected(document.name)"></button>
+                            <div *ngIf="document.etat === 'signe'">
+                            <button class="bx bx-pencil btn btn-link" 
+                             [disabled]="true"></button>
+                          </div>
+                          <div *ngIf="document.etat === 'non signe'">
+                            <button class="bx bx-pencil btn btn-link" 
+                            (click)="signer(document,'a signé la facture')"></button>
+                          </div>
+                            <button (click)="download(document.name)"  
+                              (click)="ajouterActivite(document.name, 'a telechargé la facture')"
+                              class="bx bx-download btn btn-link"></button>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+            </div>
+            <pagination-controls class="d-flex justify-content-end" (pageChange)="page = $event"
+            previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
+        </div>
+    </div>
+</div>
+</div>

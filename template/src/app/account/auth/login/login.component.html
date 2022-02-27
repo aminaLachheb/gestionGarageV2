@@ -1,0 +1,108 @@
+<div class="account-pages my-5 pt-sm-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6 col-xl-5">
+        <div class="card overflow-hidden">
+          <div class="bg-soft bg-primary">
+            <div class="row">
+              <div class="col-7">
+                <div class="text-primary p-4">
+                  <h2 class="text-primary bold">Bienvenue !</h2>
+                  <p>Connecter pour continuer.</p>
+                </div>
+              </div>
+              <!-- <div class="col-5 align-self-end">
+                <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+              </div> -->
+            </div>
+          </div>
+          <div class="card-body pt-0">
+            <div>
+              <a href="/">
+                <div class="avatar-md profile-user-wid mb-4">
+                  <span class="avatar-title rounded-circle bg-light">
+                    <img src="assets/images/logoVoiture.jpg" alt="" class="rounded-circle" height="34">
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="p-2">
+              <form class="form-horizontal login-form" [formGroup]="formGroup" 
+              (ngSubmit)="onSubmit()">
+
+                <!--<ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>-->
+
+                <div class="mb-3">
+                  <label for="email">Email</label>
+                  <input type="email" formControlName="email" class="form-control" id="email" placeholder="Entrez votre email"
+                    [ngClass]="{ 'is-invalid':  f.email.touched && f.email.errors || submitted  && f.email.errors}" />
+                  <div *ngIf="f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">L'email est obligatoire.</div>
+                    <div *ngIf="f.email.errors.email">l'email doit être valide.</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password">Mot de passe</label>
+                  <div class="input-group auth-pass-inputgroup">
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control" formControlName="password" placeholder="Entrez votre mot de passe"
+                      [ngClass]="{ 'is-invalid': f.password.touched && f.password.errors  || submitted && f.password.errors }" aria-label="Password"
+                      aria-describedby="password-addon">
+
+                    <button class="btn btn-light ms-0" type="button" id="password-addon" (click)="showPassword = !showPassword" >
+                      <i alt="hide" class="far fa-eye-slash eye-hide" 
+                      
+                      *ngIf="!showPassword"></i>
+                      <i alt="show" class="far fa-eye eye-show" 
+                      *ngIf="showPassword"></i>
+                     </button>
+                    <div *ngIf=" f.password.errors" class="invalid-feedback">
+                      <span *ngIf="f.password.errors.required">Mot de passe obligatoire</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-check" *ngIf="check ==='true'">
+                  <input class="form-check-input" type="checkbox" id="remember-check"
+                  (change)="onCheckboxChange($event)" checked>
+                  <label class="form-check-label" for="remember-check">
+                      Se souvenir de moi.
+                  </label>
+              </div>
+
+              <div class="form-check" *ngIf="check ==='false'">
+                <input class="form-check-input" type="checkbox" id="remember-check"
+                (change)="onCheckboxChange($event)" >
+                <label class="form-check-label" for="remember-check">
+                    Se souvenir de moi.
+                </label>
+            </div>
+
+                <div class="mt-3 d-grid">
+                  <button class="btn btn-primary" type="submit">Se Connecter</button>
+                
+                </div>
+               
+                <div class="mt-4 text-center">
+                  <a routerLink="/reset-password" class="text-muted"><i class="mdi mdi-lock mr-1"></i> 
+                   Mot de passe oublié </a>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <p>Vous n’avez pas de compte? <a routerLink="/account/signup" class="fw-medium text-primary"> 
+            Inscrivez-vous maintenant
+            </a> </p>
+          <p>© {{year}} Voitures. Conçu avec<i class="mdi mdi-heart text-danger"></i></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- end container -->
+</div>
+<!-- end page -->

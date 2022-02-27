@@ -1,0 +1,135 @@
+<div class="account-pages my-5 pt-sm-5">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <a>
+          <button class="bx bx-exit btn btn-danger" (click)="fermer()"></button>
+        </a>
+        </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card overflow-hidden">
+            <div class="bg-soft bg-primary">
+              <div class="row">
+                <div class="col-7">
+                  <div class="text-primary p-4">
+                    <h2 class="text-primary bold">Détails d'une voiture</h2>
+                  </div>
+                </div>
+                <!-- <div class="col-5 align-self-end">
+                  <img src="assets/images/signature-électronique.png" alt="" class="img-fluid">
+                </div> -->
+              </div>
+            </div>
+            <div class="card-body pt-0">
+              <div>
+                <a href="/">
+                    <div class="avatar-md profile-voiture-wid mb-4">
+                        <span class="avatar-title rounded-circle bg-light">
+                            <img src="assets/images/logoVoiture.jpg" alt="" class="rounded-circle" height="34" />
+                        </span>
+                    </div>
+                </a>
+              </div>
+              <div class="p-2">
+                <form class="needs-validation" name="infoForm" [formGroup]="infoForm" (ngSubmit)="onSubmit()" novalidate>
+                    <ngb-alert type="success" *ngIf="successmsg" [dismissible]="false">Modification réussie. </ngb-alert>
+
+                    <ngb-alert type="danger" *ngIf="error" [dismissible]="false">{{ error }}</ngb-alert>
+
+                    <div class="mb-3">
+                        <label for="model" class="form-label">Modèle</label>
+
+                        <input
+                            type="text"
+                            formControlName="model"
+                            class="form-control"
+                            id="model"
+                            [(ngModel)]="voiture.model"
+                            placeholder="Entrez le modèle"
+                            readonly="readonly"
+                        />
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="marque" class="form-label">Marque</label>
+
+                        <input
+                            type="text"
+                            formControlName="marque"
+                            class="form-control"
+                            id="marque"
+                            [(ngModel)]="voiture.marque"
+                            placeholder="Entrez la marque"
+                            readonly="readonly"
+                        />
+
+                        
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="prix" class="form-label">Prix</label>
+
+                        <input
+                            type="number"
+                            formControlName="prix"
+                            class="form-control"
+                            id="prix"
+                            [(ngModel)]="voiture.prix"
+                            placeholder="Entrez le prix"
+                            readonly="readonly"
+                        />
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="annee" class="form-label">Année</label>
+
+                        <input
+                        type="number"
+                            formControlName="annee"
+                            class="form-control"
+                            id="annee"
+                            [(ngModel)]="voiture.annee"
+                            placeholder="Entrez année"
+                            readonly="readonly"
+                        />
+                        
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="prixVente" class="form-label">Prix proposé</label>
+
+                        <input
+                            type="number"
+                            formControlName="prixVente"
+                            class="form-control"
+                            [ngClass]="{ 'is-invalid': f.prixVente.touched && f.prixVente.errors || submitted && f.prixVente.errors}"
+                            id="prixVente"
+                            [(ngModel)]="voiture.prixVente"
+                            placeholder="Entrez le prix proposé"
+                        />
+                        <div *ngIf=" f.prixVente.errors" class="invalid-feedback">
+                            <div *ngIf="f.prixVente.errors.matching">
+                              Le prix proposé doit être supérieur au prix d'achat!
+                            </div>
+                          </div>
+                    </div>
+                   
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary" type="submit">Ajouter</button>
+                        <button class="btn btn-danger" (click)="fermer()">Fermer</button>
+                    </div>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>

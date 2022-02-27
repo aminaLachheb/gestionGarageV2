@@ -1,0 +1,163 @@
+<app-vertical></app-vertical>
+
+<div class="main-content">
+  <div class="page-content">
+ <div class="row">
+    <div class="col-12">
+         <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h2 class="mb-0 font-size-18">Profile de la société</h2>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item active">Bienvenue à notre profile de la société
+                    </li>
+                </ol>
+            </div>
+        </div>
+  
+    <div class="card">
+     
+         <div class="col-12">
+<form class="needs-validation" name="ProfileForm" [formGroup]="ProfileForm">
+
+  <div class="mb-3">
+    <label for="nom" class="form-label"><strong>Nom de la société</strong></label>
+    <input formControlName="nom" id="nom"  type="text"  class="form-control" 
+    placeholder="Entrez le nom" [(ngModel)]="societe.nomSociete"
+    [ngClass]="{ 'is-invalid': f.nom.touched && f.nom.errors || submitted && f.nom.errors}"/>
+    <div *ngIf="f.nom.errors" class="invalid-feedback">
+      <div *ngIf="f.nom.errors.required">Le nom est obligatoire</div>
+    </div>
+    </div>
+  
+  <div class="mb-3">
+  <label for="rib" class="form-label"><strong>Relevé d'Identité Bancaire (RIB)</strong></label>
+  <input formControlName="rib" id="rib"  type="text"  class="form-control" 
+  placeholder="Enrez le RIB" [(ngModel)]="societe.rib"
+  [ngClass]="{ 'is-invalid': f.rib.touched && f.rib.errors || submitted && f.rib.errors }"/>
+  <div *ngIf="f.rib.errors" class="invalid-feedback">
+    <div *ngIf="f.rib.errors.required">Le RIB est obligatoire</div>
+  </div>
+  </div>
+
+  <div class="mb-3">
+  <label for="formeJuridique" class="form-label"><strong>Forme juridique</strong></label>
+  <input type="text" formControlName="formeJuridique"  class="form-control" 
+  [ngClass]="{ 'is-invalid': f.formeJuridique.touched && f.formeJuridique.errors || submitted && f.formeJuridique.errors }"
+   placeholder="Entrez la forme juridique" [(ngModel)]="societe.formeJuridique"/>
+  <div *ngIf="f.formeJuridique.errors" class="invalid-feedback">
+    <div *ngIf="f.formeJuridique.errors.required">La forme juridique est onligatoire</div>
+  </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="rc" class="form-label"><strong>Responsabilité civile</strong></label>
+    <input type="text" formControlName="rc"  class="form-control" 
+    [ngClass]="{ 'is-invalid': f.rc.touched && f.rc.errors || submitted && f.rc.errors}" 
+    placeholder="Entrez la responsabilité civile" [(ngModel)]="societe.respCivile"/>
+    <div *ngIf="f.rc.errors" class="invalid-feedback">
+      <div *ngIf="f.rc.errors.required">La responsabilité civile est onligatoire</div>
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="tva" class="form-label"><strong>Code TVA</strong></label>
+      <input type="text" formControlName="tva"  class="form-control" 
+      [ngClass]="{ 'is-invalid': f.tva.touched && f.tva.errors || submitted && f.tva.errors}" 
+      placeholder="Entrez le code TVA" [(ngModel)]="societe.codeTVA" />
+      <div *ngIf="f.tva.errors" class="invalid-feedback">
+        <div *ngIf="f.tva.errors.required">Le code TVA est onligatoire</div>
+      </div>
+      </div>
+
+  <label class="form-label"><strong>Adresse:</strong></label>
+  
+  <div class="mb-3"> 
+  <label for="description" class="form-label">Description</label>
+  <input type="text" formControlName="description" class="form-control"
+  placeholder="Entrez description" [(ngModel)]="societe.address.description"/>
+  </div>
+
+  <div class="mb-3">
+  <label for="rue" class="form-label">Rue</label>
+  <input type="text" formControlName="rue" class="form-control"
+  [ngClass]="{ 'is-invalid': f.rue.touched && f.rue.errors || submitted && f.rue.errors}" 
+  placeholder="Entrez rue" [(ngModel)]="societe.address.street"/>
+  <div *ngIf="f.rue.errors" class="invalid-feedback">
+  <div *ngIf="f.rue.errors.required">La rue est onligatoire</div>
+  </div>
+
+  </div>
+
+  <div class="mb-3">
+  <label for="city" class="form-label">Cité</label>
+  <input type="text" formControlName="city"  class="form-control" 
+  [ngClass]="{ 'is-invalid': f.city.touched && f.city.errors || submitted && f.city.errors}"
+  placeholder="Entrez cité" [(ngModel)]="societe.address.cityName"/>
+  <div *ngIf="f.city.errors" class="invalid-feedback">
+  <div *ngIf="f.city.errors.required">La cité est onligatoire</div>
+  </div>
+  </div>
+
+  <div class="mb-3">
+  <label for="code" class="form-label">Code postal</label>
+  <input type="text" formControlName="code"  class="form-control"
+  [ngClass]="{ 'is-invalid': f.code.touched && f.code.errors || submitted && f.code.errors}"
+   placeholder="Entrez code postal" [(ngModel)]="societe.address.cityCode"/>
+  <div *ngIf="f.code.errors" class="invalid-feedback">
+  <div *ngIf=" f.code.errors.required">Le code postal est onligatoire</div>
+  </div>
+  </div>
+
+  <div class="mb-3">
+  <label for="pays" class="form-label">Pays</label>
+  <input type="text" formControlName="pays"  class="form-control"
+  [ngClass]="{ 'is-invalid': f.pays.touched && f.pays.errors || submitted && f.pays.errors}" 
+  placeholder="Entrez pays" [(ngModel)]="societe.address.country"/>
+  <div *ngIf="f.pays.errors" class="invalid-feedback">
+  <div *ngIf="f.pays.errors.required">Le pays est onligatoire</div>
+  </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="site" class="form-label"><strong>Site web</strong></label>
+    <input type="text" formControlName="site"  class="form-control" 
+    [ngClass]="{ 'is-invalid': f.site.touched && f.site.errors || submitted && f.site.errors}" 
+    placeholder="Entrez le site web" [(ngModel)]="societe.site"/>
+    <div *ngIf="f.site.errors" class="invalid-feedback">
+      <div *ngIf="f.site.errors.required">Le site web est onligatoire</div>
+    </div>
+    </div>
+
+  <div class="mb-3">
+    <label for="tel" class="form-label"><strong>Numéro de téléphone</strong></label>
+    <input type="text" formControlName="tel"  class="form-control" 
+    [ngClass]="{ 'is-invalid': f.tel.touched && f.tel.errors || submitted && f.tel.errors}" 
+    placeholder="Entrez le numéro de téléphone" [(ngModel)]="societe.tel" />
+    <div *ngIf="f.tel.errors" class="invalid-feedback">
+      <div *ngIf="f.tel.errors.required">Le numéro de téléphone est onligatoire</div>
+    </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="fax" class="form-label"><strong>Numéro de Fax</strong></label>
+      <input type="text" formControlName="fax"  class="form-control" 
+      [ngClass]="{ 'is-invalid': f.fax.touched && f.fax.errors || submitted && f.fax.errors}" 
+      placeholder="Entrez le fax" [(ngModel)]="societe.fax"/>
+      <div *ngIf="f.fax.errors" class="invalid-feedback">
+        <div *ngIf="f.fax.errors.required">Le fax est onligatoire</div>
+      </div>
+      </div>
+
+<div class="d-flex justify-content-end ">
+  <button class="btn btn-primary" [disabled]="btnDisabled" 
+  type="submit"(click)="onSubmit()">Confirmer</button>
+  <button class="btn btn-success" [disabled]="!btnDisabled" 
+  type="submit"(click)="modifier()">Modifier</button>
+</div>
+</form>
+</div>
+</div>
+    </div>
+    </div>
+</div>
+</div>

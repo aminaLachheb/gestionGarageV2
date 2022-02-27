@@ -1,0 +1,116 @@
+<app-vertical></app-vertical>
+
+<div class="main-content">
+  <div class="page-content">
+  <app-default></app-default>
+  </div>
+  <div class="card">
+    <div class="col-12">
+
+  <div class="d-flex justify-content-between">
+      <div class="card">
+        <div class="d-flex justify-content-end">
+        <select [(ngModel)]="selectEmploye" #myselect (change)="everyEmploye(myselect.value)" >
+          <option [ngValue]="null" disabled>Choisissez un employée</option>
+          <option value="all">Tout</option>
+          <option *ngFor="let employe of employes" value="{{employe.name}}" >{{employe.name}} </option>
+        </select>
+        </div>
+         <ngx-charts-pie-chart  
+           [results]="percentVoitureEmployee"
+           [view]="viewPie"
+           [scheme]="colorScheme" 
+           [gradient]="gradient" 
+           [legend]="showLegend" 
+           [legendPosition]="legendPosition" 
+           [labels]="showLabels" 
+           [doughnut]="false" 
+           [legendTitle]="legendTitleMultiPie" 
+         
+          >
+            <!-- (select)="onSelect2($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)" -->
+          </ngx-charts-pie-chart>
+         
+        </div>
+        <div class="card">
+          <ngx-charts-number-card [results]="totalVoiture" 
+          [view]="viewNumber" 
+          [scheme]="colorScheme"
+          [cardColor]="cardColor" 
+          (select)="onSelect1($event)" >
+          </ngx-charts-number-card>
+        </div>
+      </div>
+    
+      <div class="d-flex justify-content-between">
+        <div class="card">
+          <h3><strong>Activités récentes</strong></h3>
+          <table>
+            <tr scope="row" *ngFor="let activite of activites" >
+              <div>
+              <td class="col-1">
+                <i class="bx bx-check-double bx-border-circle bx-type-solid" 
+                style="background-color:lightgray ;
+                color: dimgrey;
+                size:cssSize"></i>
+              </td>
+              <td class="col-8"><h5><strong>Le {{activite.date|date:"dd/MM/yyyy"}} à</strong> {{activite.date|date:"HH:mm"}}</h5>
+                <span>{{activite.nom}} {{activite.action}} {{activite.docName}}</span>
+              </td> 
+            </div>
+            </tr>
+          </table>
+        </div>
+        <div class="card">
+            <!-- -->
+          <ngx-charts-bar-vertical-stacked 
+          [results]="employes" 
+          [view]="view" [scheme]="colorScheme" 
+          [schemeType]="schemeType" 
+          [gradient]="gradient" 
+          [xAxis]="xAxis" 
+          [yAxis]="yAxis" 
+          [legend]="legend" 
+          [showXAxisLabel]="showXAxisLabel" 
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel" 
+          [yAxisLabel]="yAxisLabel" 
+          [legendTitle]="legendTitleMultiBar" 
+          [legendPosition]="legendPosition" 
+          [animations]="animations" 
+          [showGridLines]="showGridLines" 
+          [showDataLabel]="showDataLabel" 
+          [barPadding]="barPadding" 
+          [tooltipDisabled]="tooltipDisabled">
+          </ngx-charts-bar-vertical-stacked>
+      </div>
+      </div>
+      <!-- <div class="card"> -->
+        <!-- <h3><strong>Dernières transactions </strong></h3> -->
+      <!-- <div class=" d-flex align-items-center justify-content-between">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col" >Création </th>
+                        <th scope="col"> Etat</th>
+                        <th scope="col"> Utilisateur </th>
+                        <th scope="col">Document</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor="let transaction of transactions">
+                        <td scope="col">{{transaction.creationDate|date:"dd/MM/yyyy HH:mm:ss"}}</td>
+                        <td scope="col">{{transaction.status}}</td>
+                        <td scope="col">{{transaction.creator.completeName}}</td>
+                        <td scope="col">{{transaction.pdfs[0].name}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+      </div> -->
+</div>
+</div>
+</div>
